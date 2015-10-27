@@ -28,6 +28,7 @@ Partial Class ImageEncryptorForm
         Me.EncrypedImageSaveLocationBrowseButton = New System.Windows.Forms.Button()
         Me.EncryptedImageUrl = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ShowEncryptedLocationsCheckbox = New System.Windows.Forms.CheckBox()
         Me.OriginalImagePanel = New System.Windows.Forms.Panel()
         Me.OriginalImagePictureBox = New System.Windows.Forms.PictureBox()
         Me.EncryptedImagePanel = New System.Windows.Forms.Panel()
@@ -40,7 +41,6 @@ Partial Class ImageEncryptorForm
         Me.OriginalImageLocationLabel = New System.Windows.Forms.Label()
         Me.OriginalImageLocationButton = New System.Windows.Forms.Button()
         Me.OriginalImageUrl = New System.Windows.Forms.TextBox()
-        Me.ShowEncryptedLocationsCheckbox = New System.Windows.Forms.CheckBox()
         Me.MainWindowTablePanel.SuspendLayout()
         Me.EncryptedImageFooterPanel.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -130,6 +130,16 @@ Partial Class ImageEncryptorForm
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(202, 113)
         Me.Panel1.TabIndex = 3
+        '
+        'ShowEncryptedLocationsCheckbox
+        '
+        Me.ShowEncryptedLocationsCheckbox.AutoSize = True
+        Me.ShowEncryptedLocationsCheckbox.Location = New System.Drawing.Point(12, 10)
+        Me.ShowEncryptedLocationsCheckbox.Name = "ShowEncryptedLocationsCheckbox"
+        Me.ShowEncryptedLocationsCheckbox.Size = New System.Drawing.Size(153, 17)
+        Me.ShowEncryptedLocationsCheckbox.TabIndex = 0
+        Me.ShowEncryptedLocationsCheckbox.Text = "Show Encrypted Locations"
+        Me.ShowEncryptedLocationsCheckbox.UseVisualStyleBackColor = True
         '
         'OriginalImagePanel
         '
@@ -262,16 +272,6 @@ Partial Class ImageEncryptorForm
         Me.OriginalImageUrl.Name = "OriginalImageUrl"
         Me.OriginalImageUrl.Size = New System.Drawing.Size(429, 20)
         Me.OriginalImageUrl.TabIndex = 3
-        '
-        'ShowEncryptedLocationsCheckbox
-        '
-        Me.ShowEncryptedLocationsCheckbox.AutoSize = True
-        Me.ShowEncryptedLocationsCheckbox.Location = New System.Drawing.Point(12, 10)
-        Me.ShowEncryptedLocationsCheckbox.Name = "ShowEncryptedLocationsCheckbox"
-        Me.ShowEncryptedLocationsCheckbox.Size = New System.Drawing.Size(153, 17)
-        Me.ShowEncryptedLocationsCheckbox.TabIndex = 0
-        Me.ShowEncryptedLocationsCheckbox.Text = "Show Encrypted Locations"
-        Me.ShowEncryptedLocationsCheckbox.UseVisualStyleBackColor = True
         '
         'ImageEncryptorForm
         '
