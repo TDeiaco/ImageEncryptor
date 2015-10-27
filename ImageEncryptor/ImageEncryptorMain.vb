@@ -32,13 +32,15 @@ Public Class ImageEncryptorForm
 
         OriginalImageUrl.Text = "C:\Users\Taylor\Pictures\Standing By.jpg"
 
-        EncryptedMessageTextBox.Text = "This is the secret message!"
+        EncryptedMessageTextBox.Text = "This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is thThis is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!This is the secret message!e secret message!This is "
 
     End Sub
 
     Private Sub EmbedMessageButton_Click(sender As Object, e As EventArgs) Handles EmbedMessageButton.Click
 
         Dim messageText As String = EncryptedMessageTextBox.Text
+        Dim MessageIndex As Integer = 0
+
         Dim c As Color
 
         Dim y As Integer = 0
@@ -48,27 +50,27 @@ Public Class ImageEncryptorForm
         '   For Each b As Char In messageText
         For x As Integer = 0 To (OriginalImage.Size.Width - 1) / 4
 
-            Dim MessageIndex As Integer = (OriginalImage.Size.Width * (y - 1)) + x
-
-            If MessageIndex > messageText.Count Then
-                Exit For
-            End If
-
             For y = 0 To (OriginalImage.Size.Height - 1) / 4
 
-                If MessageIndex > messageText.Count Then
+                'Exit if message is over
+                If MessageIndex >= messageText.Count Then
                     Exit For
                 End If
+
                 c = OriginalImage.GetPixel(x, y)
                 Dim r As Integer = Convert.ToInt16(c.R)
                 Dim g As Integer = Convert.ToInt16(c.G)
                 Dim blue As Integer = Convert.ToInt16(c.B)
 
-                'Calulcate message index
-
-
                 'Only change the blue value for now, leave red and green the same
-                blue = Convert.ToInt16(messageText(MessageIndex))
+                r = Convert.ToInt16(messageText(MessageIndex))
+
+                'Color pixel a bright color to show it's location in the image
+                If ShowEncryptedLocationsCheckbox.Checked Then
+                    r = 0
+                    g = 0
+                    blue = 0
+                End If
 
                 If (x = 0) And (y = 0) Then
                     EncryptedImage.SetPixel(0, 0, Color.FromArgb(r, g, blue))
@@ -80,8 +82,15 @@ Public Class ImageEncryptorForm
                     EncryptedImage.SetPixel((x * 4) - 1, (y * 4) - 1, Color.FromArgb(r, g, blue))
                 End If
 
+                'Increase message index location
+                MessageIndex += 1
 
             Next
+
+            If MessageIndex >= messageText.Count Then
+                Exit For
+            End If
+
         Next
 
         'Next

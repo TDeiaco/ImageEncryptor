@@ -31,6 +31,7 @@ Partial Class ImageEncryptorForm
         Me.OriginalImagePanel = New System.Windows.Forms.Panel()
         Me.OriginalImagePictureBox = New System.Windows.Forms.PictureBox()
         Me.EncryptedImagePanel = New System.Windows.Forms.Panel()
+        Me.EncryptedImagePictureBox = New System.Windows.Forms.PictureBox()
         Me.ToolbarPanel = New System.Windows.Forms.Panel()
         Me.EncryptedMessageTextBox = New System.Windows.Forms.TextBox()
         Me.EmbedMessageButton = New System.Windows.Forms.Button()
@@ -39,15 +40,16 @@ Partial Class ImageEncryptorForm
         Me.OriginalImageLocationLabel = New System.Windows.Forms.Label()
         Me.OriginalImageLocationButton = New System.Windows.Forms.Button()
         Me.OriginalImageUrl = New System.Windows.Forms.TextBox()
-        Me.EncryptedImagePictureBox = New System.Windows.Forms.PictureBox()
+        Me.ShowEncryptedLocationsCheckbox = New System.Windows.Forms.CheckBox()
         Me.MainWindowTablePanel.SuspendLayout()
         Me.EncryptedImageFooterPanel.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.OriginalImagePanel.SuspendLayout()
         CType(Me.OriginalImagePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.EncryptedImagePanel.SuspendLayout()
+        CType(Me.EncryptedImagePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolbarPanel.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.EncryptedImagePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MainWindowTablePanel
@@ -121,6 +123,7 @@ Partial Class ImageEncryptorForm
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.ShowEncryptedLocationsCheckbox)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 368)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
@@ -159,6 +162,17 @@ Partial Class ImageEncryptorForm
         Me.EncryptedImagePanel.Name = "EncryptedImagePanel"
         Me.EncryptedImagePanel.Size = New System.Drawing.Size(449, 368)
         Me.EncryptedImagePanel.TabIndex = 1
+        '
+        'EncryptedImagePictureBox
+        '
+        Me.EncryptedImagePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.EncryptedImagePictureBox.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.EncryptedImagePictureBox.Location = New System.Drawing.Point(0, 0)
+        Me.EncryptedImagePictureBox.Margin = New System.Windows.Forms.Padding(0)
+        Me.EncryptedImagePictureBox.Name = "EncryptedImagePictureBox"
+        Me.EncryptedImagePictureBox.Size = New System.Drawing.Size(449, 368)
+        Me.EncryptedImagePictureBox.TabIndex = 0
+        Me.EncryptedImagePictureBox.TabStop = False
         '
         'ToolbarPanel
         '
@@ -249,16 +263,15 @@ Partial Class ImageEncryptorForm
         Me.OriginalImageUrl.Size = New System.Drawing.Size(429, 20)
         Me.OriginalImageUrl.TabIndex = 3
         '
-        'EncryptedImagePictureBox
+        'ShowEncryptedLocationsCheckbox
         '
-        Me.EncryptedImagePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.EncryptedImagePictureBox.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.EncryptedImagePictureBox.Location = New System.Drawing.Point(0, 0)
-        Me.EncryptedImagePictureBox.Margin = New System.Windows.Forms.Padding(0)
-        Me.EncryptedImagePictureBox.Name = "EncryptedImagePictureBox"
-        Me.EncryptedImagePictureBox.Size = New System.Drawing.Size(449, 368)
-        Me.EncryptedImagePictureBox.TabIndex = 0
-        Me.EncryptedImagePictureBox.TabStop = False
+        Me.ShowEncryptedLocationsCheckbox.AutoSize = True
+        Me.ShowEncryptedLocationsCheckbox.Location = New System.Drawing.Point(12, 10)
+        Me.ShowEncryptedLocationsCheckbox.Name = "ShowEncryptedLocationsCheckbox"
+        Me.ShowEncryptedLocationsCheckbox.Size = New System.Drawing.Size(153, 17)
+        Me.ShowEncryptedLocationsCheckbox.TabIndex = 0
+        Me.ShowEncryptedLocationsCheckbox.Text = "Show Encrypted Locations"
+        Me.ShowEncryptedLocationsCheckbox.UseVisualStyleBackColor = True
         '
         'ImageEncryptorForm
         '
@@ -271,14 +284,16 @@ Partial Class ImageEncryptorForm
         Me.MainWindowTablePanel.ResumeLayout(False)
         Me.EncryptedImageFooterPanel.ResumeLayout(False)
         Me.EncryptedImageFooterPanel.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.OriginalImagePanel.ResumeLayout(False)
         CType(Me.OriginalImagePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.EncryptedImagePanel.ResumeLayout(False)
+        CType(Me.EncryptedImagePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolbarPanel.ResumeLayout(False)
         Me.ToolbarPanel.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.EncryptedImagePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -300,5 +315,6 @@ Partial Class ImageEncryptorForm
     Friend WithEvents OriginalImageUrl As System.Windows.Forms.TextBox
     Friend WithEvents OriginalImageOpenButton As System.Windows.Forms.Button
     Friend WithEvents EncryptedImagePictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents ShowEncryptedLocationsCheckbox As System.Windows.Forms.CheckBox
 
 End Class
